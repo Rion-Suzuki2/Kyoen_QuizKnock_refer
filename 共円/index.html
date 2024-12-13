@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>共円</title>
+    <style>
+        #grid {
+            position: relative;
+            margin: 20px;
+        }
+        .dot {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: black;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+        }
+        .selected {
+            background-color: red;
+        }
+        .hint {
+            background-color: yellow;
+        }
+        .checked {
+            background-color: purple;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>共円</h1>
+    <p>手数: <span id="moves">0</span></p>
+    <p>完成した円の数: <span id="circle-count">0</span></p>
+    <label for="grid-size">格子サイズ:</label>
+    <input type="number" id="grid-size" value="10" min="5" max="20">
+    <button id="set-grid">フィールド作成</button>
+    <div id="grid"></div>
+    <button id="hint">ヒントを表示</button>
+    <button id="toggle-draw">円の描画: オン</button>
+    <button id="undo">戻る</button>
+    <button id="restart">再スタート</button>
+    <!-- チェックモード切り替えボタンを追加 -->
+    <button id="toggle-check">チェックモード: オフ</button>
+
+    <script src="game.js"></script>
+</body>
+</html>
